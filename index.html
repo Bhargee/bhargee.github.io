@@ -1,85 +1,41 @@
-<link rel="stylesheet" href="github-markdown.css">
-<style>
-    .markdown-body {
-        min-width: 200px;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 30px;
-    }
-</style> 
-<article class="markdown-body">
-<p><link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link></p>
-
-<h1>vrim</h1>
-
-<p>-- by Bhargava Manja and Ben Fishbein</p>
-
-<h3>What</h3>
-
-<p>The original holy war amongst programmers was the battle between vim and emacs.  Now we enter a new text editor into the fray - vrim! It's designed for VR environments, which we believe to be the future of man-machine interface. Just strap on your Oculus headset and get started editing text and writing the programs of the future.  </p>
-
-<h3>Why</h3>
-
-<p>The two dimensional desktop metaphor, and with it traditional ways of interfacing with machines, is dying a natural death. That frees us programmers from the limitations of the programs we use to create and manipulate programs - text editors and IDEs. To maximize our productivity, these programs usually offer an arcane and complex interface, because they do arcane and complex things (think code completion, refactoring, management of buffers, layout, etc). These tools have served us well, but with the advent of virtual reality, we have an opportunity to rethink the way we program. To further explore this problem space and figure out what works, we created vrim, and have documented the challenges along the way.  </p>
-
-<h3>Features</h3>
-
-<p>Though vrim is far from feature complete, and has a fraction of the functionality of vim or emacs, it comes with almost everything you need to edit programs.  First there's the stuff you expect from any text editor -   </p>
-
+<!doctype html>
+<html>
+  <head>
+    <title>Bhargava Manja</title>
+    <meta name="description" content="gotta put something clever here">
+    <link rel="stylesheet" type="text/css" href="static/alt.css">
+  </head>
+  <body>
+    <h1>Bhargava Manja</h1>
+<p>I'm a recent graduate of <a href="http://illinois.edu">UIUC</a>, where I studied
+mathematics and computer science. My research interests are varied, and my goal
+is to work on important, hard problems. I am particularly interested in formal
+methods of software construction, programming language design/implementation,
+robotic learning, and neuroscience inspired approaches to computer vision.
+I have conducted research with the <a href="http://fsl.cs.illinois.edu">FSL</a> and the <a href="http://bretl.csl.illinois.edu/">Bretl
+Robotics Group</a>. I currently work at
+<a href="http://reconstructinc.com">Reconstruct</a>. </p>
+<h2>Publications</h2>
+<p><a href="https://runtimeverification.com/ecu/RV_ECU_SAE.pdf">RV-ECU: Maximum Assurance In-Vehicle Safety
+Monitoring</a>.<br />
+<small>Philip Daian, <em>Bhargava Manja</em>, Shinichi Shiraishi, Akihito Iwai, Grigore Rosu </small><br />
+<small><strong>Society of Automotive Engineers World Congress and
+Exhibition</strong></small></p>
+<p><a href="http://web.engr.illinois.edu/~degol2/docs/CamHand_EMBC16_Paper.pdf">Automatic grasp selection using a camera in a hand
+prosthesis</a>.<br />
+<small>Joseph DeGol, Aadeel Akhtar, <em>Bhargava Manja</em>, Tim Bretl</small><br />
+<small><strong>International Conference of the IEEE Engineering in Medicine and Biology Society</strong></small></p>
+<h2>Not Work</h2>
+<p>I have recently begun climbing rocks and playing the electric bass. I am
+getting back into photography and attempting to reach my pre-undergraduate rate
+of book reading.</p>
+<h2>Contact, Links, Etcetera</h2>
 <ul>
-<li>Buffer based text editing, similar to emacs</li>
-<li>Copy/paste between and within buffers</li>
-<li>undo/redo support</li>
+<li>email: bmanja at protonmail dot com</li>
+<li><a href="http://github.com/bhargee">code</a></li>
+<li><a href="static/research_resume.pdf">Resume</a></li>
+<li><a href="#">blog</a></li>
+<li><a href="https://www.goodreads.com/review/list/63276976-bhargava-manja?page=1&amp;shelf=currently-reading">books</a></li>
 </ul>
-
-<p>Then there's the cool stuff that is only possible in VR -   </p>
-
-<ul>
-<li>Realistic and interesting environments to edit in (deserts, islands, tundra, etc)</li>
-<li>The ability to open buffers anywhere in 3D space, anywhere around you</li>
-<li>You can "zoom" buffers in and out, to increase your 3D "screen" space</li>
-<li>look at a buffer and lock on to begin editing</li>
-</ul>
-
-<h3>What We Learned</h3>
-
-<p>It seems like we're the first people to seriously explore this space (along with another team in UIUC's inaugural VR class), and we've learned a lot about what works and what doesn't. First and foremost, Unity <strong>sucks</strong> for creating text editors, and in general, for creating non-game VR experiences. We hit many roadblocks, the most debilitating of which was the fact that we spent about 3 weeks building and debugging a real text editor engine (with unlimited undo/redo, text highlighting and regex search, etc), and could not reliably integrate it with Unity's UI system. The new UI system is barely documented and not extensible at all. For example, there is no way to get cursor position inside a text field, which makes cursor based key commands (like deleting a line) hard to implement. Worse was the fact that subclassing the InputField class (the cursor position member was protected) didn't work, and modifying Unity's source code would make the code un-distributable.</p>
-<p>
-Through the course of doing user testing, we fine tuned exactly how to make a comfortable VR experience that centers around reading and writing text. We were warned that text would be hard to read and fatiguing in VR, and were told to increase text size to get around this problem. We experimented with different text sizes and buffer widths and found that placing buffers about 6 meters from the user, with a text size of ~35 pts, made vrim useable for hours. Moreover, the advice of limiting buffer width to 40 chars was just plain wrong - we could easily accommodate 60+ chars comfortable. In fact, placing the text < 2 meters from the user caused headaches because of excessive vergence. 
-</p>
-<p>
-Though the player's avatar has only 2 degrees of freedom (rotation about 2 axes), we found that designing comfortable motion was tricky. For our purposes, the user need only use head movement and key commands. The former was trivial, as head motion controlled the environment like a mouse would in a traditional 2D desktop. Users had no problem with this. Non-head controlled rotation, however, required many iteration to perfect. Event constant velocity rotation of the buffers in a spherical manner caused sickness in some, so as a compromise we rotated the avatar instead. This eliminated the problem entirely, though we do not understand why from a neurological standpoint. 
-</p>
-<p>
-Vrim represents the first steps toward a good VR text editor. One of our TAs, Apollo, had an interesting suggestion - instead of having skybox based, static scenery, vrim should have created fully interactive environments. Then, users could move around the scenery and have their buffers follow. His example was a mountain environment where he could climb a peak and start editing, then take a break, go to a forest, and begin again. If anyone want to pick up where we left off, try this approach out.
-</p>
-
-
-<h3>Key Bindings/Instructions</h3>
-
-<p>After strapping on the Oculus, press space to get past the health and safety advisory warning. Now you're in vrim. The default environment is a nice, summer sky with some clouds. In front of you, you'll see the <strong>root buffer</strong>.  It's the only buffer you can't kill. If you're looking at it, it will highlight in a nice light blue. There's a small, floating window in front of the root pane, called the <strong>file dialog</strong>. Whenever you open a new buffer, a file dialog appears. You can hit <strong>Ctrl-Space</strong> to make the file dialog disappear/appear. To open a specific file, you can type "O <file path>", and to save a file you can type "S <file path>". The commands are summarized below - </p>
-
-<ul>
-<li><strong>Ctrl-O</strong> -> toggle file dialog</li>
-<li><strong>Ctrl-H</strong> -> create buffer at location being looked at</li>
-<li><strong>Ctrl-L</strong> -> lock on to highlighted buffer</li>
-<li><strong>Ctrl-C</strong> -> copy selected text</li>
-<li><strong>Ctrl-V</strong> -> paste from clipboard to current cursor location</li>
-<li><strong>Ctrl-Q</strong> -> move buffers away</li>
-<li><strong>Ctrl-E</strong> -> move buffers closer</li>
-<li><strong>Ctrl-K</strong> -> kill highlighted buffer (<strong>does NOT prompt to save buffer</strong>)</li>
-<li><strong>Ctrl-{1-9}</strong> -> change background </li>
-<li><strong>Ctrl-<arrow></strong> -> rotate avatar</li>
-</ul>
-
-
-<h3>Try It Out!</h3>
-
-<p>We deliberately left out screenshots. Why? Two reasons -   </p>
-
-<ol>
-<li>We had to create the website <em>after</em> the end of finals week at the U of I, and since both of us left early in the morning, we didn't get a chance to take screenshots. Our bad :)</li>
-<li>To add to the mystique. Get the code <a href="https://www.dropbox.com/s/tvgms7814qeohkk/VrimUnity.zip?dl=0"> here </a> and try it out yourself! Have fun, and remember to go outside.</li>
-</ol>
-    
-</article>
+  </body>
+</html>
