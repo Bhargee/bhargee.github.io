@@ -1,0 +1,172 @@
+@charset "UTF-8";
+.buttonboxes {
+    color: #0000FF;
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+    text-decoration: underline;
+    border: medium double #FF0004;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    margin-top: 15px;
+    margin-right: 18px;
+    margin-bottom: 15px;
+    margin-left: 18px;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: -6px 5px 0px #0000FF;
+    box-shadow: -6px 5px 0px #0000FF;
+    text-align: center;
+    display: inline-block;
+    width: 162px;
+    text-transform: uppercase;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+	}
+.left_side_textbox {
+    color: #0000FF;
+    font-style: italic;
+    border: medium double #FF0004;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    margin-top: 15px;
+    margin-right: 18px;
+    margin-bottom: 15px;
+    margin-left: 18px;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: -6px 5px 0px #0000FF;
+    box-shadow: -6px 5px 0px #0000FF;
+    text-align: center;
+    display: inline-block;
+    width: 500px;
+    max-width: 500px;
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.heading {
+    text-align: center;
+    font-family: Times, "Times New Roman", serif;
+    font-weight: bold;
+    color: #212AFF;
+    text-decoration: underline;
+    border-style: double;
+    border-color: #FF0000;
+    width: 332px;
+    margin-top: 23px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 33px;
+    padding-top: 14px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 0px;
+    text-shadow: 0 0;
+    -webkit-box-shadow: -7px 7px;
+    box-shadow: -7px 7px;
+}
+.welcome_header {
+    text-align: center;
+    font-family: Times, "Times New Roman", serif;
+    text-decoration: underline;
+    border-style: double;
+    border-color: #FF0000;
+    width: 332px;
+    margin-top: 23px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 36px;
+    padding-top: 14px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 1px;
+    -webkit-box-shadow: -7px 7px;
+    box-shadow: -7px 7px;
+    font-size: x-large;
+    font-style: italic;
+    color: #0000FF;
+    font-weight: bolder;
+}
+.image {
+    display: block;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+}
+.returnbutton {
+    color: #FF0000;
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+    border: medium double #0000FF;
+    text-decoration: underline;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: -6px 5px 0px #FF0000;
+    box-shadow: -6px 5px 0px #FF0000;
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    margin-right: auto;
+    margin-left: auto;
+    width: 108px;
+}
+.centred_longtext {
+    width: 426px;
+    color: #0000FF;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    border: thin double #FF0000;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    margin-bottom: 15px;
+}
+.body_border {
+    border-style: double;
+    border-color: #0000FF;
+    max-width: 500px;
+    padding-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.centred_longtext_title {
+    width: 426px;
+    color: #0000FF;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border: thin double #FF0000;
+    text-align: center;
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    margin-bottom: 15px;
+}
+.redhorizontalrule {
+    border-left: 0.5px double #FF0000;
+    border-right: 0.5px double #FF0000;
+    border-bottom: 0.5px double #FF0000;
+    border-top: 0.5px solid #FF0000;
+    display: inherit;
+}
